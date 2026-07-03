@@ -942,52 +942,54 @@
 
   function seedDemo() {
     if (state().products.length || state().operations.length || state().expenses.length) {
-      if (!confirm('Ya existen datos. ¿Sobrescribir con la demo?')) return;
+      if (!confirm('Ya existen datos. ¿Sobrescribir con la demo de chocolate?')) return;
       DB.resetState();
     }
-    const data = [
-      { code: 'AGUA-001', name: 'Agua tratada', type: 'Materia Prima Directa', unitDescription: 'litro', costUnit: 0.15, salePriceNoTax: 0.3, salePriceTax: 0.354, stock: 15000, minStock: 3000, maxStock: 25000, supplier: 'Aguas del Norte SAC', description: 'Agua base para producción' },
-      { code: 'CO2-001', name: 'CO₂ alimentario', type: 'Materia Prima Directa', unitDescription: 'kg', costUnit: 2.8, salePriceNoTax: 4.2, salePriceTax: 4.956, stock: 1200, minStock: 250, maxStock: 1800, supplier: 'Gas Industrial SAC', description: 'Gas para carbonatación' },
-      { code: 'JAR-001', name: 'Jarabe concentrado', type: 'Materia Prima Directa', unitDescription: 'litro', costUnit: 3.5, salePriceNoTax: 5.2, salePriceTax: 6.136, stock: 800, minStock: 200, maxStock: 1200, supplier: 'Syrup Labs', description: 'Base del sabor cola' },
-      { code: 'BOT-001', name: 'Botella PET 500ml', type: 'Materia Prima Indirecta', unitDescription: 'und', costUnit: 0.22, salePriceNoTax: 0.4, salePriceTax: 0.472, stock: 12000, minStock: 2500, maxStock: 20000, supplier: 'Empaques Perú', description: 'Envase plástico' },
-      { code: 'TAP-001', name: 'Tapa rosca', type: 'Materia Prima Indirecta', unitDescription: 'und', costUnit: 0.05, salePriceNoTax: 0.1, salePriceTax: 0.118, stock: 12000, minStock: 2500, maxStock: 20000, supplier: 'Empaques Perú', description: 'Tapa de seguridad' },
-      { code: 'ETQ-001', name: 'Etiqueta cola', type: 'Materia Prima Indirecta', unitDescription: 'und', costUnit: 0.04, salePriceNoTax: 0.08, salePriceTax: 0.094, stock: 12000, minStock: 2500, maxStock: 20000, supplier: 'Gráficas Lima', description: 'Etiqueta frontal' },
-      { code: 'CAJ-001', name: 'Caja cartón x 12', type: 'Materia Prima Indirecta', unitDescription: 'und', costUnit: 0.6, salePriceNoTax: 1.0, salePriceTax: 1.18, stock: 1000, minStock: 200, maxStock: 2000, supplier: 'Cartones Perú', description: 'Caja para despacho' },
-      { code: 'FCO-001', name: 'Gaseosa cola 500ml', type: 'Producto Terminado', unitDescription: 'und', costUnit: 1.1, salePriceNoTax: 2.2, salePriceTax: 2.596, stock: 5000, minStock: 1000, maxStock: 10000, supplier: 'Planta principal', description: 'Producto final' },
-      { code: 'FCO-002', name: 'Gaseosa cola 1.5L', type: 'Producto Terminado', unitDescription: 'und', costUnit: 1.9, salePriceNoTax: 4.8, salePriceTax: 5.664, stock: 3000, minStock: 600, maxStock: 7000, supplier: 'Planta principal', description: 'Producto final grande' }
+
+    const productsData = [
+      { code: 'SUB-030', name: 'Chocolate Sublime Clásico 30 g', type: 'Producto Terminado', unitDescription: 'tableta', costUnit: 0.86255, salePriceNoTax: 2.20, salePriceTax: 2.596, stock: 0, minStock: 1000, maxStock: 20000, supplier: 'Nestlé Perú S.A.', description: 'Producto terminado de referencia para la demo.' },
+
+      { code: 'CAC-001', name: 'Pasta de cacao', type: 'Materia Prima Directa', unitDescription: 'kg', costUnit: 25.00, salePriceNoTax: 25.00, salePriceTax: 29.50, stock: 0, minStock: 20, maxStock: 200, supplier: 'Proveedor cacao', description: 'Base del licor de cacao; principal insumo de la formulación.' },
+      { code: 'MCA-001', name: 'Manteca de cacao', type: 'Materia Prima Directa', unitDescription: 'kg', costUnit: 40.00, salePriceNoTax: 40.00, salePriceTax: 47.20, stock: 0, minStock: 10, maxStock: 100, supplier: 'Proveedor cacao', description: 'Aporta solidez y fusión suave en boca.' },
+      { code: 'AZU-001', name: 'Azúcar (sacarosa)', type: 'Materia Prima Directa', unitDescription: 'kg', costUnit: 4.50, salePriceNoTax: 4.50, salePriceTax: 5.31, stock: 0, minStock: 50, maxStock: 500, supplier: 'Azucarera', description: 'Principal edulcorante de la formulación.' },
+      { code: 'LEC-001', name: 'Leche entera en polvo', type: 'Materia Prima Directa', unitDescription: 'kg', costUnit: 18.00, salePriceNoTax: 18.00, salePriceTax: 21.24, stock: 0, minStock: 10, maxStock: 120, supplier: 'Lácteos SAC', description: 'Aporta suavidad, dulzura y valor nutricional.' },
+      { code: 'SUE-001', name: 'Suero de leche en polvo', type: 'Materia Prima Directa', unitDescription: 'kg', costUnit: 10.00, salePriceNoTax: 10.00, salePriceTax: 11.80, stock: 0, minStock: 5, maxStock: 80, supplier: 'Lácteos SAC', description: 'Complemento lácteo de la formulación.' },
+      { code: 'MAN-001', name: 'Maní tostado en mitades', type: 'Materia Prima Directa', unitDescription: 'kg', costUnit: 15.00, salePriceNoTax: 15.00, salePriceTax: 17.70, stock: 0, minStock: 10, maxStock: 120, supplier: 'Frutos del Campo', description: 'Ingrediente distintivo del Sublime clásico.' },
+
+      { code: 'LECI-001', name: 'Lecitina de soya', type: 'Materia Prima Indirecta', unitDescription: 'kg', costUnit: 20.00, salePriceNoTax: 20.00, salePriceTax: 23.60, stock: 0, minStock: 1, maxStock: 20, supplier: 'Insumos alimentarios', description: 'Emulsionante para homogeneizar la mezcla.' },
+      { code: 'PGPR-001', name: 'PGPR', type: 'Materia Prima Indirecta', unitDescription: 'kg', costUnit: 45.00, salePriceNoTax: 45.00, salePriceTax: 53.10, stock: 0, minStock: 1, maxStock: 10, supplier: 'Insumos alimentarios', description: 'Mejora la fluidez del chocolate.' },
+      { code: 'VANI-001', name: 'Vainillina', type: 'Materia Prima Indirecta', unitDescription: 'litro', costUnit: 60.00, salePriceNoTax: 60.00, salePriceTax: 70.80, stock: 0, minStock: 1, maxStock: 10, supplier: 'Aromas Perú', description: 'Refuerza el perfil sensorial del producto.' },
+      { code: 'ENV-001', name: 'Envolturas flow-pack', type: 'Materia Prima Indirecta', unitDescription: 'millar', costUnit: 40.00, salePriceNoTax: 40.00, salePriceTax: 47.20, stock: 0, minStock: 2, maxStock: 50, supplier: 'Gráfica Pack', description: 'Empaque individual aluminizado.' },
+      { code: 'CAJ-001', name: 'Cajas cartón corrugado', type: 'Materia Prima Indirecta', unitDescription: 'unidad', costUnit: 1.20, salePriceNoTax: 1.20, salePriceTax: 1.42, stock: 0, minStock: 10, maxStock: 1000, supplier: 'Cartones Perú', description: 'Caja para despacho del lote.' },
+
+      { code: 'SUP-001', name: 'Supervisor de producción', type: 'Servicio', unitDescription: 'lote', costUnit: 250.00, salePriceNoTax: 250.00, salePriceTax: 295.00, stock: 0, minStock: 0, maxStock: 0, supplier: 'Planta', description: 'Control y supervisión del proceso.' },
+      { code: 'MNT-001', name: 'Mantenimiento de planta', type: 'Servicio', unitDescription: 'lote', costUnit: 150.00, salePriceNoTax: 150.00, salePriceTax: 177.00, stock: 0, minStock: 0, maxStock: 0, supplier: 'Planta', description: 'Soporte preventivo de equipos.' },
+      { code: 'CAL-001', name: 'Control de calidad', type: 'Servicio', unitDescription: 'lote', costUnit: 120.00, salePriceNoTax: 120.00, salePriceTax: 141.60, stock: 0, minStock: 0, maxStock: 0, supplier: 'Planta', description: 'Verificación de variables críticas.' }
     ];
-    data.forEach(p => DB.addProduct(p, false));
+
+    productsData.forEach(p => DB.addProduct(p, false));
+
+    const productByCode = (code) => state().products.find(p => p.code === code)?.id;
+
     DB.addRecipe({
-      finishedProductId: state().products.find(p => p.code === 'FCO-001')?.id || state().products[7]?.id,
-      name: 'Receta Gaseosa cola 500ml',
-      timeEstimated: '1.5 horas por lote',
-      modCost: 0.28,
-      cifCost: 0.19,
-      notes: 'Lote estándar de embotellado',
+      finishedProductId: productByCode('SUB-030'),
+      name: 'Receta Sublime Clásico 30 g',
+      timeEstimated: 'Lote de 10,000 tabletas',
+      modCost: 0.10,
+      cifCost: 0.2563,
+      notes: 'Receta basada en la estructura de costos real del lote.',
       items: [
-        { productId: state().products.find(p => p.code === 'AGUA-001')?.id, qtyRequired: 0.45 },
-        { productId: state().products.find(p => p.code === 'CO2-001')?.id, qtyRequired: 0.03 },
-        { productId: state().products.find(p => p.code === 'JAR-001')?.id, qtyRequired: 0.05 },
-        { productId: state().products.find(p => p.code === 'BOT-001')?.id, qtyRequired: 1 },
-        { productId: state().products.find(p => p.code === 'TAP-001')?.id, qtyRequired: 1 },
-        { productId: state().products.find(p => p.code === 'ETQ-001')?.id, qtyRequired: 1 }
-      ]
-    });
-    DB.addRecipe({
-      finishedProductId: state().products.find(p => p.code === 'FCO-002')?.id || state().products[8]?.id,
-      name: 'Receta Gaseosa cola 1.5L',
-      timeEstimated: '2 horas por lote',
-      modCost: 0.42,
-      cifCost: 0.31,
-      notes: 'Lote de presentación familiar',
-      items: [
-        { productId: state().products.find(p => p.code === 'AGUA-001')?.id, qtyRequired: 1.1 },
-        { productId: state().products.find(p => p.code === 'CO2-001')?.id, qtyRequired: 0.07 },
-        { productId: state().products.find(p => p.code === 'JAR-001')?.id, qtyRequired: 0.12 },
-        { productId: state().products.find(p => p.code === 'BOT-001')?.id, qtyRequired: 1 },
-        { productId: state().products.find(p => p.code === 'TAP-001')?.id, qtyRequired: 1 },
-        { productId: state().products.find(p => p.code === 'ETQ-001')?.id, qtyRequired: 1 },
-        { productId: state().products.find(p => p.code === 'CAJ-001')?.id, qtyRequired: 0.08 }
+        { productId: productByCode('CAC-001'), qtyRequired: 0.009 },
+        { productId: productByCode('MCA-001'), qtyRequired: 0.003 },
+        { productId: productByCode('AZU-001'), qtyRequired: 0.0105 },
+        { productId: productByCode('LEC-001'), qtyRequired: 0.003 },
+        { productId: productByCode('SUE-001'), qtyRequired: 0.0015 },
+        { productId: productByCode('MAN-001'), qtyRequired: 0.003 },
+        { productId: productByCode('LECI-001'), qtyRequired: 0.00015 },
+        { productId: productByCode('PGPR-001'), qtyRequired: 0.00005 },
+        { productId: productByCode('VANI-001'), qtyRequired: 0.00005 },
+        { productId: productByCode('ENV-001'), qtyRequired: 1.05 },
+        { productId: productByCode('CAJ-001'), qtyRequired: 0.042 }
       ]
     });
 
@@ -997,39 +999,73 @@
     const d4 = new Date(Date.now() - 86400000 * 7);
     const d5 = new Date(Date.now() - 86400000 * 2);
 
-    const pAgua = state().products.find(p => p.code === 'AGUA-001')?.id;
-    const pCo2 = state().products.find(p => p.code === 'CO2-001')?.id;
-    const pJar = state().products.find(p => p.code === 'JAR-001')?.id;
-    const pBot = state().products.find(p => p.code === 'BOT-001')?.id;
-    const pTap = state().products.find(p => p.code === 'TAP-001')?.id;
-    const pEtq = state().products.find(p => p.code === 'ETQ-001')?.id;
-    const pCaj = state().products.find(p => p.code === 'CAJ-001')?.id;
-    const pF1 = state().products.find(p => p.code === 'FCO-001')?.id;
-    const pF2 = state().products.find(p => p.code === 'FCO-002')?.id;
+    const P = {
+      SUB: productByCode('SUB-030'),
+      CAC: productByCode('CAC-001'),
+      MCA: productByCode('MCA-001'),
+      AZU: productByCode('AZU-001'),
+      LEC: productByCode('LEC-001'),
+      SUE: productByCode('SUE-001'),
+      MAN: productByCode('MAN-001'),
+      LECI: productByCode('LECI-001'),
+      PGPR: productByCode('PGPR-001'),
+      VANI: productByCode('VANI-001'),
+      ENV: productByCode('ENV-001'),
+      CAJ: productByCode('CAJ-001')
+    };
 
-    [
-      { kind: 'purchase', date: d2.toISOString().slice(0, 10), document: 'F001-1001', provider: 'Aguas del Norte SAC', productId: pAgua, productName: 'Agua tratada', qty: 12000, unitCost: 0.14, tax: 302.4, purchaseType: 'Material Directo', note: 'Compra principal' },
-      { kind: 'purchase', date: d2.toISOString().slice(0, 10), document: 'F001-1002', provider: 'Gas Industrial SAC', productId: pCo2, productName: 'CO₂ alimentario', qty: 900, unitCost: 2.75, tax: 445.5, purchaseType: 'Material Directo', note: 'Gas para carbonatación' },
-      { kind: 'purchase', date: d3.toISOString().slice(0, 10), document: 'F001-1003', provider: 'Syrup Labs', productId: pJar, productName: 'Jarabe concentrado', qty: 500, unitCost: 3.4, tax: 306, purchaseType: 'Material Directo', note: 'Jarabe base' },
-      { kind: 'purchase', date: d3.toISOString().slice(0, 10), document: 'F001-1004', provider: 'Empaques Perú', productId: pBot, productName: 'Botella PET 500ml', qty: 9000, unitCost: 0.21, tax: 340.2, purchaseType: 'Materia Prima Indirecta', note: 'Envases' },
-      { kind: 'purchase', date: d3.toISOString().slice(0, 10), document: 'F001-1005', provider: 'Empaques Perú', productId: pTap, productName: 'Tapa rosca', qty: 9000, unitCost: 0.046, tax: 70.6, purchaseType: 'Materia Prima Indirecta', note: 'Tapas' },
-      { kind: 'purchase', date: d3.toISOString().slice(0, 10), document: 'F001-1006', provider: 'Gráficas Lima', productId: pEtq, productName: 'Etiqueta cola', qty: 9000, unitCost: 0.038, tax: 61.4, purchaseType: 'Materia Prima Indirecta', note: 'Etiquetas' },
-      { kind: 'purchase', date: d3.toISOString().slice(0, 10), document: 'F001-1007', provider: 'Cartones Perú', productId: pCaj, productName: 'Caja cartón x12', qty: 600, unitCost: 0.56, tax: 60.5, purchaseType: 'Materia Prima Indirecta', note: 'Cajas' },
-      { kind: 'production', date: d4.toISOString().slice(0, 10), document: 'OP-2001', recipeId: state().recipes[0].id, finishedProductId: pF1, productId: pF1, qty: 2600, inputs: state().recipes[0].items, modCost: 728, cifCost: 494, totalCost: 0, note: 'Lote de 500ml' },
-      { kind: 'production', date: d4.toISOString().slice(0, 10), document: 'OP-2002', recipeId: state().recipes[1].id, finishedProductId: pF2, productId: pF2, qty: 1500, inputs: state().recipes[1].items, modCost: 630, cifCost: 465, totalCost: 0, note: 'Lote de 1.5L' },
-      { kind: 'sale', date: d5.toISOString().slice(0, 10), document: 'B001-3001', customer: 'Supermercados Central', productId: pF1, productName: 'Gaseosa cola 500ml', qty: 900, unitPrice: 2.2, tax: 356.4, note: 'Venta mayorista' },
-      { kind: 'sale', date: d5.toISOString().slice(0, 10), document: 'B001-3002', customer: 'Distribuidora Sur', productId: pF2, productName: 'Gaseosa cola 1.5L', qty: 450, unitPrice: 4.8, tax: 388.8, note: 'Venta mayorista' },
-      { kind: 'loss', date: d1.toISOString().slice(0, 10), productId: pF1, productName: 'Gaseosa cola 500ml', qty: 35, reason: 'Merma', description: 'Botellas dañadas en despacho', responsible: 'Almacén' },
-      { kind: 'expense', date: d4.toISOString().slice(0, 10), group: 'MOD', subgroup: 'Sueldos de producción', amount: 4200, document: 'PLAN-01', description: 'Planilla de planta', responsible: 'RRHH' },
-      { kind: 'expense', date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Energía', amount: 1350, document: 'LUZ-01', description: 'Consumo eléctrico', responsible: 'Contabilidad' },
-      { kind: 'expense', date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Agua', amount: 220, document: 'AG-01', description: 'Consumo de agua', responsible: 'Contabilidad' },
-      { kind: 'expense', date: d3.toISOString().slice(0, 10), group: 'Ventas', subgroup: 'Publicidad', amount: 1800, document: 'PUB-01', description: 'Campaña digital', responsible: 'Marketing' },
-      { kind: 'expense', date: d3.toISOString().slice(0, 10), group: 'Administrativos', subgroup: 'Alquiler', amount: 2500, document: 'ALQ-01', description: 'Alquiler de oficina', responsible: 'Administración' },
-      { kind: 'expense', date: d3.toISOString().slice(0, 10), group: 'Financieros', subgroup: 'Intereses', amount: 480, document: 'BNK-01', description: 'Intereses por financiamiento', responsible: 'Finanzas' },
-      { kind: 'expense', date: d1.toISOString().slice(0, 10), group: 'Tributos', subgroup: 'Arbitrios', amount: 160, document: 'MUNI-01', description: 'Arbitrios municipales', responsible: 'Contabilidad' }
-    ].forEach(op => DB.addOperation(op, false) || null);
+    const purchases = [
+      { date: d2.toISOString().slice(0, 10), document: 'F001-1001', provider: 'Cacaos del Sur SAC', productId: P.CAC, productName: 'Pasta de cacao', qty: 90, unitCost: 25.00, tax: 405.00, purchaseType: 'Material Directo', note: 'MP directa' },
+      { date: d2.toISOString().slice(0, 10), document: 'F001-1002', provider: 'Cacao Premium SAC', productId: P.MCA, productName: 'Manteca de cacao', qty: 30, unitCost: 40.00, tax: 216.00, purchaseType: 'Material Directo', note: 'MP directa' },
+      { date: d2.toISOString().slice(0, 10), document: 'F001-1003', provider: 'Azucarera Perú', productId: P.AZU, productName: 'Azúcar (sacarosa)', qty: 105, unitCost: 4.50, tax: 85.05, purchaseType: 'Material Directo', note: 'MP directa' },
+      { date: d2.toISOString().slice(0, 10), document: 'F001-1004', provider: 'Lácteos SAC', productId: P.LEC, productName: 'Leche entera en polvo', qty: 30, unitCost: 18.00, tax: 97.20, purchaseType: 'Material Directo', note: 'MP directa' },
+      { date: d2.toISOString().slice(0, 10), document: 'F001-1005', provider: 'Lácteos SAC', productId: P.SUE, productName: 'Suero de leche en polvo', qty: 15, unitCost: 10.00, tax: 27.00, purchaseType: 'Material Directo', note: 'MP directa' },
+      { date: d2.toISOString().slice(0, 10), document: 'F001-1006', provider: 'Frutos del Campo', productId: P.MAN, productName: 'Maní tostado en mitades', qty: 30, unitCost: 15.00, tax: 81.00, purchaseType: 'Material Directo', note: 'MP directa' },
 
-    refresh('Empresa demo cargada');
+      { date: d3.toISOString().slice(0, 10), document: 'F001-2001', provider: 'Insumos alimentarios', productId: P.LECI, productName: 'Lecitina de soya', qty: 1.5, unitCost: 20.00, tax: 5.40, purchaseType: 'Material Indirecto', note: 'CIF - material indirecto' },
+      { date: d3.toISOString().slice(0, 10), document: 'F001-2002', provider: 'Insumos alimentarios', productId: P.PGPR, productName: 'PGPR', qty: 0.5, unitCost: 45.00, tax: 4.05, purchaseType: 'Material Indirecto', note: 'CIF - material indirecto' },
+      { date: d3.toISOString().slice(0, 10), document: 'F001-2003', provider: 'Aromas Perú', productId: P.VANI, productName: 'Vainillina', qty: 0.5, unitCost: 60.00, tax: 5.40, purchaseType: 'Material Indirecto', note: 'CIF - material indirecto' },
+      { date: d3.toISOString().slice(0, 10), document: 'F001-2004', provider: 'Gráfica Pack', productId: P.ENV, productName: 'Envolturas flow-pack', qty: 10.5, unitCost: 40.00, tax: 75.60, purchaseType: 'Material Indirecto', note: 'CIF - material indirecto' },
+      { date: d3.toISOString().slice(0, 10), document: 'F001-2005', provider: 'Cartones Perú', productId: P.CAJ, productName: 'Cajas cartón corrugado', qty: 420, unitCost: 1.20, tax: 90.72, purchaseType: 'Material Indirecto', note: 'CIF - material indirecto' },
+
+      { date: d4.toISOString().slice(0, 10), document: 'OP-3001', recipeId: state().recipes[0].id, finishedProductId: P.SUB, productId: P.SUB, qty: 10000, inputs: state().recipes[0].items, modCost: 1000, cifCost: 2563, totalCost: 0, note: 'Lote principal de Sublime Clásico 30 g' },
+
+      { date: d5.toISOString().slice(0, 10), document: 'B001-5001', customer: 'Supermercados Central', productId: P.SUB, productName: 'Chocolate Sublime Clásico 30 g', qty: 10000, unitPrice: 2.20, tax: 3960.00, note: 'Venta total del lote' },
+
+      { date: d4.toISOString().slice(0, 10), group: 'MOD', subgroup: 'Operario de trituración y torrefacción', amount: 100, document: 'PLAN-MOD-01', description: '8 horas asignadas al lote', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'MOD', subgroup: 'Operario de molienda', amount: 100, document: 'PLAN-MOD-02', description: '8 horas asignadas al lote', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'MOD', subgroup: 'Operario de mezclado y refinado', amount: 168, document: 'PLAN-MOD-03', description: '12 horas asignadas al lote', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'MOD', subgroup: 'Operario de conchado', amount: 336, document: 'PLAN-MOD-04', description: '24 horas asignadas al lote', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'MOD', subgroup: 'Operario de templado e inclusión de maní', amount: 104, document: 'PLAN-MOD-05', description: '8 horas asignadas al lote', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'MOD', subgroup: 'Operarios de moldeo y empaque', amount: 192, document: 'PLAN-MOD-06', description: '16 horas asignadas al lote', responsible: 'Planta' },
+
+      { date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Supervisor de Producción', amount: 250, document: 'CIF-01', description: 'Supervisión general del lote', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Técnico de Mantenimiento', amount: 150, document: 'CIF-02', description: 'Mantenimiento de equipos de planta', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Analista de Control de Calidad', amount: 120, document: 'CIF-03', description: 'Control de variables críticas', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Lecitina de soya', amount: 30, document: 'CIF-04', description: 'Emulsionante para homogeneizar la mezcla', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'PGPR', amount: 22.5, document: 'CIF-05', description: 'Mejora la fluidez del chocolate', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Vainillina', amount: 30, document: 'CIF-06', description: 'Refuerzo sensorial', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Envolturas flow-pack multilaminado', amount: 420, document: 'CIF-07', description: 'Empaque individual impreso', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Cajas de cartón corrugado', amount: 504, document: 'CIF-08', description: 'Cajas para despacho', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Energía eléctrica', amount: 600, document: 'CIF-09', description: 'Consumo de equipos de planta', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Agua potable', amount: 52.5, document: 'CIF-10', description: 'Limpieza y enfriamiento', responsible: 'Planta' },
+      { date: d4.toISOString().slice(0, 10), group: 'CIF', subgroup: 'Depreciación', amount: 384, document: 'CIF-11', description: 'Maquinaria de planta', responsible: 'Contabilidad' },
+
+      { date: d3.toISOString().slice(0, 10), group: 'Administrativos', subgroup: 'Sueldo Gerencia y Administración', amount: 400, document: 'ADM-01', description: 'Gestión general', responsible: 'Administración' },
+      { date: d3.toISOString().slice(0, 10), group: 'Administrativos', subgroup: 'Sueldo Contabilidad', amount: 250, document: 'ADM-02', description: 'Registro contable', responsible: 'Contabilidad' },
+      { date: d3.toISOString().slice(0, 10), group: 'Administrativos', subgroup: 'Servicios básicos de oficina (luz, agua, internet)', amount: 150, document: 'ADM-03', description: 'Servicios administrativos', responsible: 'Administración' },
+      { date: d3.toISOString().slice(0, 10), group: 'Administrativos', subgroup: 'Útiles y licencias de software', amount: 100, document: 'ADM-04', description: 'Oficina y software', responsible: 'Administración' },
+
+      { date: d3.toISOString().slice(0, 10), group: 'Ventas', subgroup: 'Publicidad y marketing', amount: 600, document: 'VEN-01', description: 'Campaña promocional Sublime', responsible: 'Marketing' },
+      { date: d3.toISOString().slice(0, 10), group: 'Ventas', subgroup: 'Flete y distribución', amount: 350, document: 'VEN-02', description: 'Distribución del lote', responsible: 'Logística' },
+      { date: d3.toISOString().slice(0, 10), group: 'Ventas', subgroup: 'Comisiones fuerza de ventas', amount: 450, document: 'VEN-03', description: 'Comisiones por venta', responsible: 'Ventas' },
+
+      { date: d1.toISOString().slice(0, 10), group: 'Financieros', subgroup: 'Intereses y comisiones bancarias', amount: 2100, document: 'FIN-01', description: 'Financiamiento capital de trabajo', responsible: 'Finanzas' }
+    ];
+
+    purchases.forEach(op => DB.addOperation(op, false) || null);
+
+    refresh('Demo de chocolate Sublime cargada');
   }
 
   function bindEvents() {
@@ -1045,6 +1081,8 @@
       showToast('Tema', `Se activó el modo ${next === 'dark' ? 'oscuro' : 'claro'}.`, 'info');
     });
 
+    elements.btnDemo.textContent = 'Cargar Demo Chocolate';
+    elements.btnDemo.title = 'Cargar demo de chocolate';
     elements.btnDemo.addEventListener('click', seedDemo);
     elements.btnUndo.addEventListener('click', () => {
       if (DB.undo()) {
