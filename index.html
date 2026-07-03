@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="ERP Pocket" />
-  <title>ERP Pocket v2.0</title>
+  <title>ERP Pocket v2.0 — Demo Chocolate</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="styles.css" />
 
@@ -25,7 +25,7 @@
     <div class="splash-card">
       <div class="splash-badge">EP</div>
       <h1>ERP Pocket v2.0</h1>
-      <p>Inventario, kardex, producción, gastos y reportes offline.</p>
+      <p>Demo de chocolate, kardex, producción, gastos y reportes offline.</p>
       <div class="progress"></div>
     </div>
   </div>
@@ -38,14 +38,14 @@
         <div class="logo">EP</div>
         <div>
           <h1 id="companyName">ERP Pocket</h1>
-          <p>App profesional offline para teléfonos y PC</p>
+          <p>App profesional offline para teléfonos, tablet y PC</p>
         </div>
       </div>
       <div class="top-actions">
         <button id="themeToggle" class="ghost-btn" title="Cambiar tema">🌙 Oscuro</button>
         <button id="btnInstall" class="primary-btn" style="display:none">Instalar</button>
         <button id="btnUndo" class="ghost-btn" title="Deshacer última acción">↩️ Deshacer</button>
-        <button id="btnDemo" class="success-btn" title="Cargar demo embotelladora">Cargar Empresa Demo</button>
+        <button id="btnDemo" class="success-btn" title="Cargar demo chocolate">Cargar Empresa Demo</button>
         <button id="btnHelp" class="ghost-btn" title="Manual de ayuda">📘 Ayuda</button>
         <button id="btnCalculator" class="ghost-btn" title="Calculadora integrada">🧮 Calc</button>
         <button id="btnCalendar" class="ghost-btn" title="Calendario">🗓️ Calendario</button>
@@ -94,7 +94,7 @@
           <div class="screen-head">
             <div>
               <h2 class="section-title">Dashboard financiero</h2>
-              <p class="section-sub">Ventas y compras mensuales para explicar el negocio en clase.</p>
+              <p class="section-sub">Ventas, compras y costos del demo de chocolate para explicar el negocio en clase.</p>
             </div>
           </div>
           <div class="canvas-wrap"><canvas id="chartSales"></canvas></div>
@@ -575,7 +575,7 @@
       <div class="grid">
         <article class="card">
           <h4 class="section-title">Cómo usarlo</h4>
-          <p class="section-sub">1) Carga la demo o crea productos. 2) Registra compras. 3) Produce. 4) Vende. 5) Revisa Kardex y Estado de Resultados.</p>
+          <p class="section-sub">1) Carga la demo de chocolate o crea productos. 2) Registra compras. 3) Produce. 4) Vende. 5) Revisa Kardex y Estado de Resultados.</p>
         </article>
         <article class="card">
           <h4 class="section-title">Validaciones inteligentes</h4>
@@ -583,12 +583,357 @@
         </article>
         <article class="card">
           <h4 class="section-title">PWA y offline</h4>
-          <p class="section-sub">Incluye manifest, service worker, tema claro/oscuro, splash screen, iconos y almacenamiento persistente con localStorage.</p>
+          <p class="section-sub">Incluye manifest, service worker, tema claro/oscuro, splash screen, iconos y almacenamiento persistente con localStorage. La demo está basada en el chocolate Sublime.</p>
         </article>
       </div>
     </div>
   </div>
 
+  <script id="demoChocolateData" type="application/json">
+{
+  "profile": "Sublime Clásico",
+  "product": {
+    "name": "Tableta de Chocolate con Leche y Maní \"Sublime Clásico\" (30 g)",
+    "brand": "Nestlé Perú S.A.",
+    "batch_units": 10000,
+    "unit_weight_g": 30,
+    "unit_cost_total_soles": 8625.5,
+    "unit_cost_soles": 0.86255,
+    "mp_total_soles": 5062.5,
+    "mod_total_soles": 1000.0,
+    "cif_total_soles": 2563.0
+  },
+  "components": {
+    "materia_prima_directa": [
+      {
+        "item": "Pasta de cacao",
+        "description": "Base del licor de cacao; principal insumo de la formulación del chocolate Sublime.",
+        "source_detail": "90 kg empleados en el lote de 10,000 tabletas (30 g c/u); costo total S/ 2,250.000",
+        "unit": "kg",
+        "raw_value": "S/. 25.00 / kg",
+        "quantity": 90.0,
+        "unit_cost_soles": 25.0,
+        "total_soles": 2.25
+      },
+      {
+        "item": "Manteca de cacao",
+        "description": "Aporta solidez a temperatura ambiente y fusión suave en boca (34–38 °C).",
+        "source_detail": "30 kg empleados en el lote; costo total S/ 1,200.000",
+        "unit": "kg",
+        "raw_value": "S/. 40.00 / kg",
+        "quantity": 30.0,
+        "unit_cost_soles": 40.0,
+        "total_soles": 1.2
+      },
+      {
+        "item": "Azúcar (sacarosa)",
+        "description": "Principal edulcorante; representa ≈50 % de la formulación.",
+        "source_detail": "105 kg empleados en el lote; costo total S/ 472.500",
+        "unit": "kg",
+        "raw_value": "S/. 4.50 / kg",
+        "quantity": 105.0,
+        "unit_cost_soles": 4.5,
+        "total_soles": 472.5
+      },
+      {
+        "item": "Leche entera en polvo",
+        "description": "Aporta suavidad, dulzura y valor nutricional al producto.",
+        "source_detail": "30 kg empleados en el lote; costo total S/ 540.000",
+        "unit": "kg",
+        "raw_value": "S/. 18.00 / kg",
+        "quantity": 30.0,
+        "unit_cost_soles": 18.0,
+        "total_soles": 540.0
+      },
+      {
+        "item": "Suero de leche en polvo",
+        "description": "Complemento lácteo utilizado en la formulación del chocolate con leche.",
+        "source_detail": "15 kg empleados en el lote; costo total S/ 150.000",
+        "unit": "kg",
+        "raw_value": "S/. 10.00 / kg",
+        "quantity": 15.0,
+        "unit_cost_soles": 10.0,
+        "total_soles": 150.0
+      },
+      {
+        "item": "Maní tostado en mitades",
+        "description": "Ingrediente distintivo de la variante clásica de Sublime; se incorpora tras el templado.",
+        "source_detail": "30 kg empleados en el lote; costo total S/ 450.000",
+        "unit": "kg",
+        "raw_value": "S/. 15.00 / kg",
+        "quantity": 30.0,
+        "unit_cost_soles": 15.0,
+        "total_soles": 450.0
+      }
+    ],
+    "mano_obra_directa": [
+      {
+        "item": "Operario de trituración y torrefacción",
+        "description": "Separa cáscara y nibs; desarrolla color, sabor y aroma del cacao mediante tostado.",
+        "source_detail": "8 horas asignadas en el lote; costo total S/ 100.000",
+        "unit": "hora",
+        "raw_value": "S/. 12.50 / hora",
+        "quantity": 8.0,
+        "unit_cost_soles": 12.5,
+        "total_soles": 100.0
+      },
+      {
+        "item": "Operario de molienda",
+        "description": "Muele las habas tostadas hasta obtener el licor de cacao.",
+        "source_detail": "8 horas asignadas en el lote; costo total S/ 100.000",
+        "unit": "hora",
+        "raw_value": "S/. 12.50 / hora",
+        "quantity": 8.0,
+        "unit_cost_soles": 12.5,
+        "total_soles": 100.0
+      },
+      {
+        "item": "Operario de mezclado y refinado",
+        "description": "Combina licor de cacao, manteca, azúcar y leche; reduce el tamaño de partícula.",
+        "source_detail": "12 horas asignadas en el lote; costo total S/ 168.000",
+        "unit": "hora",
+        "raw_value": "S/. 14.00 / hora",
+        "quantity": 12.0,
+        "unit_cost_soles": 14.0,
+        "total_soles": 168.0
+      },
+      {
+        "item": "Operario de conchado",
+        "description": "Amasa la mezcla por horas para eliminar acidez y desarrollar el sabor final.",
+        "source_detail": "24 horas asignadas en el lote; costo total S/ 336.000",
+        "unit": "hora",
+        "raw_value": "S/. 14.00 / hora",
+        "quantity": 24.0,
+        "unit_cost_soles": 14.0,
+        "total_soles": 336.0
+      },
+      {
+        "item": "Operario de templado e inclusión de maní",
+        "description": "Controla el enfriamiento (fase cristalina V) e incorpora el maní tostado.",
+        "source_detail": "8 horas asignadas en el lote; costo total S/ 104.000",
+        "unit": "hora",
+        "raw_value": "S/. 13.00 / hora",
+        "quantity": 8.0,
+        "unit_cost_soles": 13.0,
+        "total_soles": 104.0
+      },
+      {
+        "item": "Operarios de moldeo y empaque",
+        "description": "Da forma a la tableta de 30 g, enfría y envuelve el producto (2 operarios).",
+        "source_detail": "16 horas asignadas en el lote; costo total S/ 192.000",
+        "unit": "hora",
+        "raw_value": "S/. 12.00 / hora",
+        "quantity": 16.0,
+        "unit_cost_soles": 12.0,
+        "total_soles": 192.0
+      }
+    ],
+    "cif_moi": [
+      {
+        "item": "Supervisor de Producción",
+        "description": "Supervisión general del proceso productivo del lote.",
+        "source_detail": "Cuota asignada por lote de 10,000 tabletas",
+        "unit": "por lote",
+        "raw_value": "S/. 250.000 / lote",
+        "quantity": 10.0,
+        "unit_cost_soles": 250.0,
+        "total_soles": 10000.0
+      },
+      {
+        "item": "Técnico de Mantenimiento",
+        "description": "Mantenimiento de equipos de planta (refinadora, conchadora, etc.).",
+        "source_detail": "Cuota asignada por lote",
+        "unit": "por lote",
+        "raw_value": "S/. 150.000 / lote",
+        "unit_cost_soles": 150.0
+      },
+      {
+        "item": "Analista de Control de Calidad",
+        "description": "Verificación de variables críticas: temperatura, humedad, gramaje.",
+        "source_detail": "Cuota asignada por lote",
+        "unit": "por lote",
+        "raw_value": "S/. 120.000 / lote",
+        "unit_cost_soles": 120.0
+      }
+    ],
+    "cif_materiales_indirectos": [
+      {
+        "item": "Lecitina de soya",
+        "description": "Emulsionante que homogeneiza la mezcla y reduce la viscosidad.",
+        "source_detail": "1.5 kg empleados en el lote; costo total S/ 30.000",
+        "unit": "kg",
+        "raw_value": "S/. 20.00 / kg",
+        "quantity": 1.5,
+        "unit_cost_soles": 20.0,
+        "total_soles": 30.0
+      },
+      {
+        "item": "PGPR (poliglicerol polirricinoleato)",
+        "description": "Emulsionante complementario que mejora la fluidez del chocolate.",
+        "source_detail": "0.5 kg empleados en el lote; costo total S/ 22.500",
+        "unit": "kg",
+        "raw_value": "S/. 45.00 / kg",
+        "quantity": 0.5,
+        "unit_cost_soles": 45.0,
+        "total_soles": 22.5
+      },
+      {
+        "item": "Saborizante vainilla (vainillina)",
+        "description": "Refuerza el perfil sensorial del chocolate.",
+        "source_detail": "0.5 litros empleados en el lote; costo total S/ 30.000",
+        "unit": "litro",
+        "raw_value": "S/. 60.00 / litro",
+        "quantity": 0.5,
+        "unit_cost_soles": 60.0,
+        "total_soles": 30.0
+      },
+      {
+        "item": "Envolturas (flow-pack multilaminado)",
+        "description": "Papel aluminizado con envoltura impresa para el empaque individual.",
+        "source_detail": "10.5 millares empleados en el lote; costo total S/ 420.000",
+        "unit": "millar",
+        "raw_value": "S/. 40.00 / millar",
+        "quantity": 10.5,
+        "unit_cost_soles": 40.0,
+        "total_soles": 420.0
+      },
+      {
+        "item": "Cajas de cartón corrugado (displays de 24)",
+        "description": "Encajado del producto terminado antes del despacho.",
+        "source_detail": "420 unidades empleadas en el lote; costo total S/ 504.000",
+        "unit": "unidad",
+        "raw_value": "S/. 1.20 / unidad",
+        "quantity": 420.0,
+        "unit_cost_soles": 1.2,
+        "total_soles": 504.0
+      }
+    ],
+    "cif_otros": [
+      {
+        "item": "Energía eléctrica (equipos de planta)",
+        "description": "Alimenta tostadora, molino, refinadora, conchadora y moldeadora.",
+        "source_detail": "800 kWh consumidos en el lote; costo total S/ 600.000",
+        "unit": "kWh",
+        "raw_value": "S/. 0.75 / kWh",
+        "quantity": 800.0,
+        "unit_cost_soles": 0.75,
+        "total_soles": 600.0
+      },
+      {
+        "item": "Agua potable (limpieza y enfriamiento)",
+        "description": "Limpieza de equipos y enfriamiento del chocolate en túnel.",
+        "source_detail": "15 m3 empleados en el lote; costo total S/ 52.500",
+        "unit": "m3",
+        "raw_value": "S/. 3.50 / m3",
+        "quantity": 15.0,
+        "unit_cost_soles": 3.0,
+        "total_soles": 52.5
+      },
+      {
+        "item": "Depreciación (refinadora, conchadora, etc.)",
+        "description": "Depreciación de maquinaria empleada durante el proceso.",
+        "source_detail": "48 horas-máquina en el lote; costo total S/ 384.000",
+        "unit": "hora-máquina",
+        "raw_value": "S/. 8.00 / hora-máquina",
+        "quantity": 48.0,
+        "unit_cost_soles": 8.0,
+        "total_soles": 384.0
+      }
+    ],
+    "gastos_administrativos": [
+      {
+        "item": "Sueldo Gerencia y Administración",
+        "description": "Gestión general de la operación vinculada al lote.",
+        "source_detail": "Prorrateo por lote; costo total S/ 400.000",
+        "unit": "por lote",
+        "raw_value": "S/. 400.000 / lote",
+        "quantity": 400.0,
+        "unit_cost_soles": 400.0,
+        "total_soles": 400.0
+      },
+      {
+        "item": "Sueldo Contabilidad",
+        "description": "Registro y control contable de las operaciones del lote.",
+        "source_detail": "Prorrateo por lote; costo total S/ 250.000",
+        "unit": "por lote",
+        "raw_value": "S/. 250.000 / lote",
+        "quantity": 250.0,
+        "unit_cost_soles": 250.0,
+        "total_soles": 250.0
+      },
+      {
+        "item": "Servicios básicos de oficina (luz, agua, internet)",
+        "description": "Servicios administrativos generales.",
+        "source_detail": "Prorrateo por lote; costo total S/ 150.000",
+        "unit": "por lote",
+        "raw_value": "S/. 150.000 / lote",
+        "quantity": 150.0,
+        "unit_cost_soles": 150.0,
+        "total_soles": 150.0
+      },
+      {
+        "item": "Útiles y licencias de software",
+        "description": "Materiales de oficina y licencias empleadas en administración.",
+        "source_detail": "Prorrateo por lote; costo total S/ 100.000",
+        "unit": "por lote",
+        "raw_value": "S/. 100.000 / lote",
+        "quantity": 100.0,
+        "unit_cost_soles": 100.0,
+        "total_soles": 100.0
+      }
+    ],
+    "gastos_ventas": [
+      {
+        "item": "Publicidad y marketing",
+        "description": "Campaña de promoción de la marca Sublime.",
+        "source_detail": "Campaña prorrateada; costo total S/ 600.000",
+        "unit": "por lote",
+        "raw_value": "S/. 600.000 / lote",
+        "quantity": 600.0,
+        "unit_cost_soles": 600.0,
+        "total_soles": 600.0
+      },
+      {
+        "item": "Flete y distribución",
+        "description": "Transporte de las 10,000 unidades del lote a puntos de venta.",
+        "source_detail": "Transporte de 10,000 unidades; costo total S/ 350.000",
+        "unit": "por lote",
+        "raw_value": "S/. 350.000 / lote",
+        "quantity": 10.0,
+        "unit_cost_soles": 350.0,
+        "total_soles": 350.0
+      },
+      {
+        "item": "Comisiones fuerza de ventas",
+        "description": "Comisiones estimadas por la venta del lote.",
+        "source_detail": "Porcentaje estimado; costo total S/ 450.000",
+        "unit": "por lote",
+        "raw_value": "S/. 450.000 / lote",
+        "quantity": 450.0,
+        "unit_cost_soles": 450.0,
+        "total_soles": 450.0
+      }
+    ],
+    "gastos_financieros": [
+      {
+        "item": "Intereses y comisiones bancarias",
+        "description": "Línea de capital de trabajo usada para financiar la compra anticipada de materia prima estacional (cacao, azúcar).",
+        "source_detail": "Gasto financiero mensual estimado",
+        "unit": "mensual",
+        "raw_value": "S/. 2,100.00 / mes",
+        "unit_cost_soles": 2.1
+      }
+    ]
+  },
+  "notes": [
+    "Datos tomados de la estructura de costos del lote de 10,000 tabletas.",
+    "La demo debe reflejar chocolate, no gaseosa."
+  ]
+}
+  </script>
+  <script>
+    window.ERP_POCKET_DEMO = JSON.parse(document.getElementById('demoChocolateData').textContent);
+  </script>
   <script src="db.js"></script>
   <script src="charts.js"></script>
   <script src="app.js"></script>
