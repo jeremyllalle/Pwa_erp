@@ -940,6 +940,7 @@
     } else display.value += value;
   }
 
+  // Demo basada en la estructura de costos del Chocolate Sublime Clásico (Excel adjunto).
   function seedDemo() {
     if (state().products.length || state().operations.length || state().expenses.length) {
       if (!confirm('Ya existen datos. ¿Sobrescribir con la demo de chocolate?')) return;
@@ -1065,7 +1066,7 @@
 
     purchases.forEach(op => DB.addOperation(op, false) || null);
 
-    refresh('Demo de chocolate Sublime cargada');
+    refresh('Demo de chocolate Sublime Clásico cargada');
   }
 
   function bindEvents() {
